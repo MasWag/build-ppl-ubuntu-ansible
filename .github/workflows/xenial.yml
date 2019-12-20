@@ -1,4 +1,4 @@
-name: Trusty
+name: Xenial
 
 on: [push]
 
@@ -6,7 +6,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    container: ubuntu:trusty
+    container: ubuntu:xenial
     strategy:
       max-parallel: 4
 
@@ -16,12 +16,7 @@ jobs:
       run: |
         apt-get update
         apt-get install software-properties-common -y
-        apt-add-repository --yes ppa:ansible/ansible
-        apt-get update
+        apt-add-repository --yes --update ppa:ansible/ansible
         apt-get install ansible python-apt -y
-
-    - name: install python libraries for SSL
-      run: apt-get install python-urllib3 python-openssl python-ndg-httpsclient python-pyasn1
-
     - name: run ansible
       run : ansible-playbook ./build_ppl.yaml

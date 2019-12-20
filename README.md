@@ -2,6 +2,7 @@ build-ppl-ubuntu-ansible
 ========================
 
 [![Actions Status](https://github.com/MasWag/build-ppl-ubuntu-ansible/workflows/Trusty/badge.svg)](https://github.com/MasWag/build-ppl-ubuntu-ansible/actions)
+[![Actions Status](https://github.com/MasWag/build-ppl-ubuntu-ansible/workflows/Xenial/badge.svg)](https://github.com/MasWag/build-ppl-ubuntu-ansible/actions)
 [![Actions Status](https://github.com/MasWag/build-ppl-ubuntu-ansible/workflows/Bionic/badge.svg)](https://github.com/MasWag/build-ppl-ubuntu-ansible/actions)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
