@@ -1,0 +1,27 @@
+name: Trusty
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    container: ubuntu:trusty
+    strategy:
+      max-parallel: 4
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: install ansible
+      run: |
+        apt-get update
+        apt-get install software-properties-common -y
+        apt-add-repository --yes ppa:ansible/ansible
+        apt-get update
+        apt-get install ansible python-apt -y
+
+    - name: install python libraries for SSL
+      run: pip install urllib3 pyOpenSSL ndg-httpsclient pyasn1
+
+    - name: run ansible
+      run : ansible-playbook ./build_ppl.yaml
